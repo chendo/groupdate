@@ -14,6 +14,7 @@ require "groupdate/adapters/mysql_adapter"
 require "groupdate/adapters/postgresql_adapter"
 require "groupdate/adapters/redshift_adapter"
 require "groupdate/adapters/sqlite_adapter"
+require "groupdate/adapters/clickhouse_adapter"
 
 module Groupdate
   class Error < RuntimeError; end
@@ -49,6 +50,8 @@ Groupdate.register_adapter ["Mysql2", "Mysql2Spatial", "Mysql2Rgeo"], Groupdate:
 Groupdate.register_adapter ["PostgreSQL", "PostGIS"], Groupdate::Adapters::PostgreSQLAdapter
 Groupdate.register_adapter "Redshift", Groupdate::Adapters::RedshiftAdapter
 Groupdate.register_adapter "SQLite", Groupdate::Adapters::SQLiteAdapter
+Groupdate.register_adapter "Clickhouse", Groupdate::Adapters::ClickhouseAdapter
+
 
 require "groupdate/enumerable"
 
